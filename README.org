@@ -1,0 +1,15 @@
+
+* TODO Part 0
+WIP...
+
+* Part 1
+I used Postgres for storing the data. Since I was on a time crunch, I
+used PostsgREST as a pseudo-backend.
+
+* IN-PROGRESS Part 2
+I used React+TypeScript.
+
+
+
+
+* TODO Next Steps
