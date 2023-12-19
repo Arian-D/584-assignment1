@@ -7,9 +7,13 @@ I used Postgres for storing the data. Since I was on a time crunch, I
 used PostsgREST as a pseudo-backend.
 
 * IN-PROGRESS Part 2
-I used React+TypeScript.
+I used a library called SortableJs with React+TypeScript.
 
 
 
 
-* TODO Next Steps
+* IN-PROGRESS Next Steps
+- Caddy :: TLS and other things
+- GraphQL Connector :: REST is not the best
+- Authentication mechanism :: This is not secure; use  JWT
+- Refined Frontend :: 

@@ -3,10 +3,9 @@ create schema if not exists api;
 -- Tasks
 create table if not exists api.task (
   id serial primary key,
-  -- done boolean not null default false,
   name text not null,
   description text not null,
-  sort_field integer,
+  sort_field serial not null,
   created_at timestamptz,
   updated_at timestamptz,
   deleted_at timestamptz
@@ -16,7 +15,6 @@ create table if not exists api.task (
 -- Comments
 create table if not exists api.comment (
   id serial primary key,
-  -- done boolean not null default false,
   task_comment text not null,
   task_id integer references api.task(id),
   created_at timestamptz,
@@ -24,8 +22,16 @@ create table if not exists api.comment (
   deleted_at timestamptz
 );
 
+
+-- TODO: Create view
+-- create view comments_view as
+-- select t.name,  t from api.task t
+-- join api.comment c on t.id = c.task_id
+-- order by t.sort_field ASC;
+
+
 -- In an ideal world, I'd implement some sort of basic security
-create role web_anon nologin;
+create role web_anon superuser;
 
 -- Grant everything 🙂 
 grant all on schema api to web_anon;
