@@ -1,18 +1,31 @@
-
-* TODO Part 0
-WIP...
-
+#+title: Assignment  1
+* Part 0
 * Part 1
 I used Postgres for storing the data. Since I was on a time crunch, I
-used PostsgREST as a pseudo-backend.
+used PostsgREST as a pseudo-backend, which generates the REST api,
+given the schema. To start, run
+#+begin_src shell
+docker compose up -d
+#+end_src
+and to see logs (for both postgres and postgrest) use
+#+begin_src shell
+docker compose logs
+#+end_src
 
-* IN-PROGRESS Part 2
+Afterwards, you'd have to load the schema and the role in order to be
+able to use the REST API from the frontend.
+#+begin_src shell
+docker compose exec -T db psql -U app_user -d app_db < schema.sql
+#+end_src
+* Part 2
 I used a library called SortableJs with React+TypeScript.
+To run, use
+#+begin_src shell
+npm start
+#+end_src
 
 
-
-
-* IN-PROGRESS Next Steps
+* Next Steps
 - Caddy :: TLS and other things
 - GraphQL Connector :: REST is not the best
 - Authentication mechanism :: This is not secure; use  JWT

@@ -5,7 +5,7 @@ create table if not exists api.task (
   id serial primary key,
   name text not null,
   description text not null,
-  sort_field serial not null,
+  sort_field serial unique not null,
   created_at timestamptz,
   updated_at timestamptz,
   deleted_at timestamptz
